@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-$:.push "ext"
+$:.push "ext", "lib"
 require 'pe'
 
 PE::Cmd.start(ARGV)
