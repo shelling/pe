@@ -1,7 +1,7 @@
 #include <ruby.h>
 #include "pe.h"
 
-VALUE PE = Qnil;
+extern VALUE PE = Qnil;
 
 VALUE
 load(VALUE self) {
@@ -36,4 +36,6 @@ Init_pe() {
     rb_define_method(PE, "load",        load,       0);
     rb_define_method(PE, "vendor",      vendor,     0);
     rb_define_method(PE, "cpuname",     cpuname,    0);
+
+    Init_pe_agent();
 }
