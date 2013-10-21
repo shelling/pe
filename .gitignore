@@ -18,3 +18,4 @@ tmp
 *.so
 *.o
 Makefile
+mkmf.log
