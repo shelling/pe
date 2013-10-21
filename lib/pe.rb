@@ -1,6 +1,6 @@
 require "pe/version"
 require "pe/pe"
 
-module Pe
+module PE
   # Your code goes here...
 end

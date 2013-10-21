@@ -5,7 +5,7 @@ require 'pe/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "pe"
-  spec.version       = Pe::VERSION
+  spec.version       = PE::VERSION
   spec.authors       = ["shelling"]
   spec.email         = ["navyblueshellingford@gmail.com"]
   spec.description   = %q{The Parallel Executor and Queue System targets MPI enviroment.}

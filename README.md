@@ -1,4 +1,4 @@
-# Pe
+# PE
 
 TODO: Write a gem description
 
