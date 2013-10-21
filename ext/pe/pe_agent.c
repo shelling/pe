@@ -1,5 +1,13 @@
 #include "pe_agent.h"
 
+void Init_pe_agent() {
+    VALUE PE_Agent = rb_define_class_under(PE, "Agent", rb_cObject);
+    rb_define_method(PE_Agent, "load",      load,       0);
+    rb_define_method(PE_Agent, "vendor",    vendor,     0);
+    rb_define_method(PE_Agent, "cpuname",   cpuname,    0);
+    rb_define_method(PE_Agent, "hostname",  hostname,   0);
+}
+
 VALUE
 load(VALUE self) {
     double *load = loadavg();
@@ -35,12 +43,4 @@ hostname(VALUE self) {
     VALUE result = rb_str_new2(hostname);
     free(hostname);
     return result;
-}
-
-void Init_pe_agent() {
-    VALUE PE_Agent = rb_define_class_under(PE, "Agent", rb_cObject);
-    rb_define_method(PE_Agent, "load",      load,       0);
-    rb_define_method(PE_Agent, "vendor",    vendor,     0);
-    rb_define_method(PE_Agent, "cpuname",   cpuname,    0);
-    rb_define_method(PE_Agent, "hostname",  hostname,   0);
 }
