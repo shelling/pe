@@ -14,8 +14,26 @@ load(VALUE self) {
     return result;
 }
 
+VALUE
+vendor(VALUE self) {
+    char *vendor = get_cpu_vendor();
+    VALUE result = rb_str_new2(vendor);
+    free(vendor);
+    return result;
+}
+
+VALUE
+cpuname(VALUE self) {
+    char *cpuname = get_cpu_name();
+    VALUE result = rb_str_new2(cpuname);
+    free(cpuname);
+    return result;
+}
+
 void
 Init_pe() {
     PE = rb_define_module("PE");
-    rb_define_method(PE, "load", load, 0);
+    rb_define_method(PE, "load",        load,       0);
+    rb_define_method(PE, "vendor",      vendor,     0);
+    rb_define_method(PE, "cpuname",     cpuname,    0);
 }
