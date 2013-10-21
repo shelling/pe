@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require 'pe'
+
+PE::Cmd.start(ARGV)
