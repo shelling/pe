@@ -14,5 +14,10 @@ module PE
                 Rack::Server.start(options)
             end
         end
+
+        desc "version", "print version"
+        def version
+            puts PE::VERSION
+        end
     end
 end
