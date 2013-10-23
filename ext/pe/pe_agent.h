@@ -44,7 +44,7 @@ get_cpu_name() {
     return cpuname;
 }
 
-VALUE load(VALUE self);
-VALUE vendor(VALUE self);
-VALUE cpuname(VALUE self);
-VALUE hostname(VALUE self);
+static VALUE load(VALUE self);
+static VALUE vendor(VALUE self);
+static VALUE cpuname(VALUE self);
+static VALUE hostname(VALUE self);

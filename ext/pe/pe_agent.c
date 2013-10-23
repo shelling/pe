@@ -8,6 +8,7 @@ void Init_pe_agent() {
     rb_define_method(PE_Agent, "hostname",  hostname,   0);
 }
 
+static
 VALUE
 load(VALUE self) {
     double *load = loadavg();
@@ -19,6 +20,7 @@ load(VALUE self) {
     return result;
 }
 
+static
 VALUE
 vendor(VALUE self) {
     char *vendor = get_cpu_vendor();
@@ -27,6 +29,7 @@ vendor(VALUE self) {
     return result;
 }
 
+static
 VALUE
 cpuname(VALUE self) {
     char *cpuname = get_cpu_name();
@@ -35,6 +38,7 @@ cpuname(VALUE self) {
     return result;
 }
 
+static
 VALUE
 hostname(VALUE self) {
     char *hostname = malloc(1024*sizeof(char));
