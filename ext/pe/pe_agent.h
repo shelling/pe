@@ -48,3 +48,4 @@ static VALUE load(VALUE self);
 static VALUE vendor(VALUE self);
 static VALUE cpuname(VALUE self);
 static VALUE hostname(VALUE self);
+static VALUE cpunumber(VALUE self);

@@ -6,6 +6,7 @@ void Init_pe_agent() {
     rb_define_method(PE_Agent, "vendor",    vendor,     0);
     rb_define_method(PE_Agent, "cpuname",   cpuname,    0);
     rb_define_method(PE_Agent, "hostname",  hostname,   0);
+    rb_define_method(PE_Agent, "cpunumber", cpunumber,  0);
 }
 
 static
@@ -47,4 +48,10 @@ hostname(VALUE self) {
     VALUE result = rb_str_new2(hostname);
     free(hostname);
     return result;
+}
+
+static
+VALUE
+cpunumber(VALUE self) {
+    return INT2NUM(get_nprocs());
 }

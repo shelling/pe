@@ -4,5 +4,6 @@
 #include <string.h>
 #include <cpuid.h>
 #include <unistd.h>
+#include <sys/sysinfo.h>
 
 extern VALUE PE;
