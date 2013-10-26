@@ -1,12 +1,14 @@
-#include "pe_agent.h"
+#include "ext.h"
 
-void Init_pe_agent() {
+void Init_ext() {
+    VALUE PE       = rb_define_module("PE");
     VALUE PE_Agent = rb_define_class_under(PE, "Agent", rb_cObject);
     rb_define_method(PE_Agent, "load",      load,       0);
     rb_define_method(PE_Agent, "vendor",    vendor,     0);
     rb_define_method(PE_Agent, "cpuname",   cpuname,    0);
     rb_define_method(PE_Agent, "hostname",  hostname,   0);
     rb_define_method(PE_Agent, "cpunumber", cpunumber,  0);
+    rb_define_method(PE_Agent, "domainname",domainname, 0);
 }
 
 static
@@ -54,4 +56,15 @@ static
 VALUE
 cpunumber(VALUE self) {
     return INT2NUM(get_nprocs());
+}
+
+static
+VALUE
+domainname(VALUE self) {
+    char *domainname = malloc(1024*sizeof(char));
+    getdomainname(domainname, 1023);
+    domainname[1023] = '\0';
+    VALUE result = rb_str_new2(domainname);
+    free(domainname);
+    return result;
 }

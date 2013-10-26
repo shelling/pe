@@ -1,4 +1,10 @@
-#include "pe.h"
+#include <ruby.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <cpuid.h>
+#include <unistd.h>
+#include <sys/sysinfo.h>
 
 double *
 loadavg() {
@@ -49,3 +55,4 @@ static VALUE vendor(VALUE self);
 static VALUE cpuname(VALUE self);
 static VALUE hostname(VALUE self);
 static VALUE cpunumber(VALUE self);
+static VALUE domainname(VALUE self);
