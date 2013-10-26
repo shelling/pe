@@ -1,6 +1,7 @@
 require "pe/version"
-require "pe/cmd"
 
 module PE
-  # Your code goes here...
+    autoload :Cmd,      "pe/cmd"
+    autoload :Agent,    "pe/agent"
+    autoload :Master,   "pe/master"
 end
