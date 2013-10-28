@@ -1,11 +1,7 @@
 require 'spec_helper'
 
 describe PE do
-  it 'should have a version number' do
-    PE::VERSION.should_not be_nil
-  end
-
-  it 'should do something useful' do
-    false.should be_true
-  end
+    subject { PE::Agent.new }
+    it { should have(12).vendor }
+    it { should have(47).cpuname }
 end
